@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List
 import json
 
+
 @dataclass
 class room:
     name: str
@@ -12,8 +13,9 @@ class room:
     up: str
     down: str
 
+
 class rooms:
-    def __init__(self, rooms:List[room]):
+    def __init__(self, rooms: List[room]):
         self.rooms = {}
         for room in rooms:
             self.rooms[room.name] = room
@@ -22,19 +24,19 @@ class rooms:
 
     @classmethod
     def from_json(cls, json_file):
-        with open(json_file, mode = 'r') as f:
-            data:dict = json.load(f)
-        
+        with open(json_file, mode='r') as f:
+            data: dict = json.load(f)
+
         rooms = []
         for key, value in data.items():
             rooms.append(room(
-                name = key,
-                north = value['N'],
-                south = value['S'],
-                east = value['E'],
-                west = value['W'],
-                up = value['U'],
-                down = value['D']
+                name=key,
+                north=value['N'],
+                south=value['S'],
+                east=value['E'],
+                west=value['W'],
+                up=value['U'],
+                down=value['D']
             ))
 
         return cls(rooms)
@@ -44,9 +46,9 @@ class rooms:
             self.current_room = room_name
             self.has_explorer = True
             return
-        else: 
-            raise ValueError(f"There is no room called {room_name}")
-    
+        else:
+            raise ValueError(f"There is no room called {room_name}.")
+
     def go_north(self):
         if self.has_explorer:
             print(f"Moved north from room {self.current_room} into room {self.rooms[self.current_room].north}")
@@ -60,7 +62,7 @@ class rooms:
             self.current_room = self.rooms[self.current_room].south
         else:
             raise RuntimeError("There is not currently an explorer placed in these rooms.")
-    
+
     def go_east(self):
         if self.has_explorer:
             print(f"Moved east from room {self.current_room} into room {self.rooms[self.current_room].east}")

@@ -1,1 +1,1 @@
-__all__ = ["explorer"]
+__all__ = ["explorer", "explore"]
