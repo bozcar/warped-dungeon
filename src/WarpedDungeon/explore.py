@@ -3,7 +3,7 @@ def init_dungeon():
     from pathlib import Path
     import sys
 
-    if sys.version_info < (3.9):
+    if sys.version_info < (3,9):
         import importlib_resrouces
     else:
         import importlib.resources as importlib_resources
