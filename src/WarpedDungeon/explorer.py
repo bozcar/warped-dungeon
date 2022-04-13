@@ -89,4 +89,13 @@ class rooms:
         else:
             raise RuntimeError("There is not currently an explorer placed in these rooms.")
 
-    
+    def inspect_room(self):
+        if self.has_explorer:
+            print(f"The door to the north leads to room {self.rooms[self.current_room].north}.")
+            print(f"The door to the east leads to room {self.rooms[self.current_room].east}.")
+            print(f"The door to the south leads to room {self.rooms[self.current_room].south}.")
+            print(f"The door to the west leads to room {self.rooms[self.current_room].west}.")
+            print(f"The trapdoor in the ceiling leads to room {self.rooms[self.current_room].up}.")
+            print(f"The trapdoor in the floor leads to room {self.rooms[self.current_room].down}.")
+        else:
+            raise RuntimeError("There is not currently an explorer placed in these rooms.")
