@@ -1,5 +1,7 @@
 # Warped Dungeon
 
+![Tests](https://github.com/bozcar/warped-dungeon/actions/workflows/tests.yml/badge.svg)
+
 ## Installation 
 
 This code is intended to be run by installing the python package `WarpedDungeon` containied in this repo. To do this with pip run the command:
