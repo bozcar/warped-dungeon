@@ -3,7 +3,7 @@ def init_dungeon():
     from pathlib import Path
     from importlib import resources
 
-    from WarpedDungeon.explorer import rooms
+    from .explorer import rooms
 
     parser = ArgumentParser(description="Explore the warped dungeon in Senley Forest.")
     parser.add_argument('--room_data', '-rd', default='')
