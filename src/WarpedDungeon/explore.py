@@ -1,7 +1,12 @@
 def init_dungeon():
     from argparse import ArgumentParser
     from pathlib import Path
-    from importlib import resources
+    import sys
+
+    if sys.version_info < (3.9):
+        import importlib_resrouces
+    else:
+        import importlib.resources as importlib_resources
 
     from .explorer import rooms
 
@@ -11,7 +16,7 @@ def init_dungeon():
     arguments = parser.parse_args()
 
     if arguments.room_data == '':
-        pkg = resources.files("WarpedDungeon")
+        pkg = importlib_resources.files("WarpedDungeon")
         room_data= pkg / "data" / "layout.json"
     else:
         room_data = Path(arguments.room_data)
