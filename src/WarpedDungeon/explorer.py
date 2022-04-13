@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Dict
 import json
 
 
@@ -25,7 +25,7 @@ class rooms:
     @classmethod
     def from_json(cls, json_file):
         with open(json_file, mode='r') as f:
-            data: dict[str, dict[str, str]] = json.load(f)
+            data: Dict[str, Dict[str, str]] = json.load(f)
 
         rooms = []
         for key, value in data.items():
