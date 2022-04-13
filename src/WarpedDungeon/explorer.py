@@ -25,7 +25,7 @@ class rooms:
     @classmethod
     def from_json(cls, json_file):
         with open(json_file, mode='r') as f:
-            data: dict = json.load(f)
+            data: dict[str, dict[str, str]] = json.load(f)
 
         rooms = []
         for key, value in data.items():
