@@ -14,7 +14,7 @@ def init_dungeon(args):
     import sys
 
     if sys.version_info < (3, 9):
-        import importlib_resrouces
+        import importlib_resources
     else:
         import importlib.resources as importlib_resources
 
