@@ -23,7 +23,7 @@ def init_dungeon(args):
     if args.room_data == '':
         pkg = importlib_resources.files("WarpedDungeon")
         with importlib_resources.as_file(pkg / "data" / "layout.json") as f:
-            room_data = Path(f)   
+            room_data = Path(f)
     else:
         room_data = Path(args.room_data)
         if not room_data.is_file():
